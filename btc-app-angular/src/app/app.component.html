@@ -3,5 +3,6 @@
   <input [(ngModel)]="btcAddress" type="text" placeholder="Enter BTC address">
   <button (click)="checkBalance()">Check Balance</button>
   <p *ngIf="balance !== null">Balance: {{ balance }} BTC</p>
+  <p *ngIf="usdValue !== null">USD Value: ${{ usdValue }}</p>
   <p *ngIf="error">{{ error }}</p>
 </div>
