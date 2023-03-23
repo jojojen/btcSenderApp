@@ -1,0 +1,7 @@
+<div class="container">
+  <h1>BTC Balance Checker</h1>
+  <input [(ngModel)]="btcAddress" type="text" placeholder="Enter BTC address">
+  <button (click)="checkBalance()">Check Balance</button>
+  <p *ngIf="balance !== null">Balance: {{ balance }} BTC</p>
+  <p *ngIf="error">{{ error }}</p>
+</div>
