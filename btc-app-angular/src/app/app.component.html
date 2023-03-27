@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>BTC Balance Checker</h1>
+  <h1>BTC Transaction Tools</h1>
   <input [(ngModel)]="btcAddress" type="text" placeholder="Enter BTC address">
   <button (click)="fetchBalance()">Check Balance</button>
   <button (click)="fetchTransactionFees()" [disabled]="!balance || !usdValue">Fetch Transaction Fees</button>
