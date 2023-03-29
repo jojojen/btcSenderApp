@@ -3,6 +3,7 @@
   <input [(ngModel)]="btcAddress" type="text" placeholder="Enter BTC address">
   <button (click)="fetchBalance()">Check Balance</button>
   <button (click)="fetchTransactionFees()" [disabled]="!balance || !usdValue">Fetch Transaction Fees</button>
+  <div *ngIf="isLoading" class="loader"></div>
   <p *ngIf="balance !== null">Balance: {{ balance }} BTC</p>
   <p *ngIf="usdValue !== null">USD Value: ${{ usdValue }}</p>
   <p *ngIf="transactionFeeBtc !== null">Transaction Fee (est.): {{ transactionFeeBtc }} BTC</p>

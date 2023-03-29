@@ -15,8 +15,11 @@ export class AppComponent {
   transactionFeeBtc: number | null = null;
   transactionFeeUsd: number | null = null;
 
+  isLoading: boolean = false;
+
 // Add a new method to fetch balance only
 async fetchBalance() {
+  this.isLoading = true;
   if (!this.btcAddress) {
     this.error = 'Please enter a valid Bitcoin address.';
     return;
@@ -29,10 +32,12 @@ async fetchBalance() {
   } catch (error) {
     this.error = 'Error fetching balance. Please try again later.';
   }
+  this.isLoading = false;
 }
 
 // Add a new method to fetch transaction fees only
 async fetchTransactionFees() {
+  this.isLoading = true;
   try {
     const feePerByte = await this.fetchTransactionFeeEstimate();
     const averageTransactionSize = 250; // You can adjust this value based on the type of transaction
@@ -41,6 +46,7 @@ async fetchTransactionFees() {
   } catch (error) {
     this.error = 'Error fetching transaction fees. Please try again later.';
   }
+  this.isLoading = false;
 }
 
 
