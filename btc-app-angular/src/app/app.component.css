@@ -69,3 +69,23 @@ body {
       transform: rotate(360deg);
     }
   }
+
+  /* app.component.css */
+.footer {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .footer img {
+    width: 100px;
+    height: auto;
+  }
+  
+  .footer-text {
+    font-size: 0.8rem;
+  }
+  
+  .btc-address {
+    font-family: monospace;
+  }
+  
